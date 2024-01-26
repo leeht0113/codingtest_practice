@@ -5,7 +5,7 @@ def solution(x, y, n):
     visited = [0] * (y+1)
     move = [n, 2, 3]
     
-    if x== y:
+    if x == y:
         return 0
     
     queue = deque()
