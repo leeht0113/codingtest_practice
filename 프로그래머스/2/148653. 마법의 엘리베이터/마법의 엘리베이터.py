@@ -14,7 +14,7 @@ def solution(storey):
             answer += (remain // (10 ** (search - 1)))
             storey -= remain
         # 5와 같으면 그 다음 자릿 수가 5보다 크면 올라가고 작으면 내려감
-        elif remain == (5 * (10 ** (search - 1))):
+        else:
             answer += (remain // (10 ** (search - 1)))
             if (storey // (10 ** (search)) % 10) >= 5:
                 storey += remain
