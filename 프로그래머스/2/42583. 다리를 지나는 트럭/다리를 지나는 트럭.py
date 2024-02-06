@@ -5,7 +5,7 @@ def solution(bridge_length, weight, truck_weights):
     ing = deque() # 다리를 건너는 트럭
     end = [] # 다리를 지난 트럭
     truck_weights = deque(truck_weights)
-    second = deque([0] * bridge_length)
+    second = deque([0] * bridge_length) # 다리를 건너는 트럭이 머무는 시간을 담는 배열
     total_trucks = len(truck_weights)
     while len(end) < total_trucks:
         answer += 1
