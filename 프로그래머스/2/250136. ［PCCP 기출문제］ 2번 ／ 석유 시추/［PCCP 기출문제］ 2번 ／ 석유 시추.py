@@ -27,7 +27,7 @@ def bfs(n, m, row, column, land, visited, oil):
     return cnt
 
 def solution(land):
-    visited = {} # 방문 배열의 어느 덩어리에 속하는지 표시
+    visited = {} # 방문 배열이 어느 덩어리에 속하는지 표시
     answer = []
     column, row = len(land[0]), len(land)
     oil = {} # 각 그룹별 석유량
