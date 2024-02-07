@@ -10,7 +10,6 @@ def solution(bandage, health, attacks):
         # 공격을 안 당하는 경우
         if answer < health and i != attacks[0][0]:
             success += 1
-            # print(success)
             # 연속 성공이 시전 시간(time)보다 작은 경우
             if success < time:
                 # 최대 체력 이상인 경우
@@ -22,10 +21,8 @@ def solution(bandage, health, attacks):
             elif success == time:
                 success = 0
                 # 추가 회복한 체력이 최대 체력보다 작은 경우
-                # print(recover, additional)
                 if answer + recover + additional < health:
                     answer += (recover + additional)
-                    # print(answer)
                 # 추가 회복한 체력이 최대 체력보다 클 경우
                 else:
                     answer = health
@@ -33,10 +30,7 @@ def solution(bandage, health, attacks):
         elif i == attacks[0][0]:
             a = attacks.popleft()
             answer -= a[1]
-            # print(success)
             success = 0
         if answer <= 0:
-            # print(answer)
             return -1
-        # print(answer)
     return answer
