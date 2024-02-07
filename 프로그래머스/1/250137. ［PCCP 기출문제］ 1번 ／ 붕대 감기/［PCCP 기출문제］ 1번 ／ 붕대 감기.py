@@ -15,6 +15,7 @@ def solution(bandage, health, attacks):
                 # 초당 회복량을 더한 값이 최대 체력보다 작은 경우
                 if answer + recover < health:
                     answer += recover
+                # 초당 회복량을 더한 값이 최대 체력보다 클 경우
                 else:
                     answer = health
             # 시전 시간(time) 연속 성공할 경우
