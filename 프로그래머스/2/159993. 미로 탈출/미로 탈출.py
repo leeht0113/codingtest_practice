@@ -34,8 +34,8 @@ def solution(maps):
                 lever = [i, j]
             elif maps[i][j] == "E":
                 exit = [i, j]
-    start_lever = bfs(start, lever, maps)
     lever_exit = bfs(lever, exit, maps)
+    start_lever = bfs(start, lever, maps)
     if start_lever and lever_exit:
         return start_lever + lever_exit
     else:
