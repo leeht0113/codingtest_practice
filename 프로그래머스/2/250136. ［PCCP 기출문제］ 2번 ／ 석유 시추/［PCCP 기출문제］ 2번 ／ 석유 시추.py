@@ -24,7 +24,6 @@ def bfs(n, m, row, column, land, visited, oil):
     oil[group] = cnt
     group += 1
     
-    return cnt
 
 def solution(land):
     visited = {} # 방문 배열이 어느 덩어리에 속하는지 표시
