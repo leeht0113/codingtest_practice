@@ -11,7 +11,6 @@ def solution(phone_book):
                 return False
     return answer
 
-
 # def solution(phone_book):
 #     phone_book.sort()
 #     for i in range(len(phone_book)-1):
