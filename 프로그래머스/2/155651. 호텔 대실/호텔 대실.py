@@ -4,9 +4,7 @@ def solution(book_time):
     for start, end in book_time:
         temp = []
         start_hour, start_minute = start.split(':')
-        # print(start_hour, start_minute)
         end_hour, end_minute = end.split(':')
-        # print(end_hour, end_minute)
         start_hour = 60 * int(start_hour)
         temp.append(start_hour+int(start_minute))
         end_hour = 60 * int(end_hour)
