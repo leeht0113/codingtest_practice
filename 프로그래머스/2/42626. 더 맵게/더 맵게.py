@@ -3,7 +3,7 @@ import heapq
 def solution(scoville, K):
     answer = 0
     heapq.heapify(scoville)
-    while True:
+    while scoville:
         min1 = heapq.heappop(scoville)
         if min1 >= K:
             return answer
