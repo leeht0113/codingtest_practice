@@ -8,7 +8,7 @@ def solution(n, weak, dist):
         for f in permutations(dist, len(dist)):
             cnt = 1
             position = weak[i] + f[cnt - 1]
-            for j in range(i+1, i + length):
+            for j in range(i + 1, i + length):
                 if position < weak[j]:
                     cnt += 1
                     if cnt > len(dist):
