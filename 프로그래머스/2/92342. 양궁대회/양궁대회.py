@@ -1,7 +1,6 @@
 ryan_list = []
 
 def dfs(n, idx, apeach, ryan):
-    global answer
     if n == 0:
         ryan_list.append(ryan.copy())
         return
