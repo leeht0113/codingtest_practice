@@ -1,7 +1,6 @@
 from collections import deque
 
 def solution(maps):
-    answer = 0
     # 상, 하, 좌, 우
     move_x = [-1, 1, 0, 0]
     move_y = [0, 0, -1, 1]
