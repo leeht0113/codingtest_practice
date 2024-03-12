@@ -19,7 +19,8 @@ def solution(maps):
                 if maps[nx][ny] == 1 and visited[nx][ny] == 0:
                     visited[nx][ny] = visited[x][y] + 1
                     queue.append((nx, ny))
-    if visited[len(maps)-1][len(maps[0])-1] != 0:
-        return visited[len(maps)-1][len(maps[0])-1]
+    answer = visited[len(maps)-1][len(maps[0])-1]
+    if answer != 0:
+        return answer
     else:
         return -1
