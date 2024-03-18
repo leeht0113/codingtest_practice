@@ -1,6 +1,6 @@
 def dfs(i, visited, computers):
     visited[i] = 1
-    for j in range(len(computers[0])):
+    for j in range(len(computers[i])):
         if computers[i][j] == 1 and visited[j] == 0:
             dfs(j, visited, computers)
     
