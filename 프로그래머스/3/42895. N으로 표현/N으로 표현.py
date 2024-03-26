@@ -16,5 +16,4 @@ def solution(N, number):
                         dp[i].add(op1 // op2)
         if number in dp[i]:
             return i
-    else:
-        return -1        
+    return -1        
