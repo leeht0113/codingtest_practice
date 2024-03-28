@@ -9,6 +9,7 @@ def rotate_90(arr):
 
 def check(new_lock):
     lock_length = len(new_lock) // 3
+    # 3배 이상으로 변경되었기 때문에 정중앙에 lock 배열이 위치함
     for i in range(lock_length, lock_length * 2):
         for j in range(lock_length, lock_length * 2):
             if new_lock[i][j] != 1:
