@@ -10,7 +10,7 @@ def dfs(v, visited, graph):
     # print(v, visited)
     
 def solution(n, wires):
-    answer = float('inf')
+    answer = 100
     graph = [[] for _ in range(n + 1)]
     for a, b in wires:
         graph[a].append(b)
