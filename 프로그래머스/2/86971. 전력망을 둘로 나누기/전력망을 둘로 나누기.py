@@ -10,6 +10,7 @@ def dfs(v, visited, graph):
     # print(v, visited)
     
 def solution(n, wires):
+    global cnt
     answer = 100
     graph = [[] for _ in range(n + 1)]
     for a, b in wires:
@@ -17,7 +18,6 @@ def solution(n, wires):
         graph[b].append(a)
     # print(graph)
     for a, b in wires:
-        global cnt
         cnt = 0
         visited = [0] * (n + 1)
         visited[b] = 1
