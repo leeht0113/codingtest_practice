@@ -7,9 +7,7 @@ def solution(n, edge):
     for a, b in edge:
         graph[a].append(b)
         graph[b].append(a)
-    # print(graph)
     queue = deque()
-    # cnt = 1
     queue.append(1)
     visited[1] = 1
     while queue:
@@ -20,6 +18,6 @@ def solution(n, edge):
                 queue.append(n)
     max_distance = max(visited)
     for r in visited[1:]:
-        if r == max(visited):
+        if r == max_distance:
             answer += 1
     return answer
