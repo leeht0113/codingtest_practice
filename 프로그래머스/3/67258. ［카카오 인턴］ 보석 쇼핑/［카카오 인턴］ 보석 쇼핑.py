@@ -11,13 +11,17 @@ def solution(gems):
             gem_dict[gems[end]] = 1
         else:
             gem_dict[gems[end]] += 1
-
+        # print(gem_dict, (start, end))
         # 모든 종류의 보석이 창에 있을 때, 시작 지점을 최대한 오른쪽으로 이동
         while len(gem_dict) == gem_types:
+            # print('---------------')
+            # print(gem_dict, shortest)
+            # print('---------------')
             if end - start < shortest:
+                # print(end - start)
                 shortest = end - start
                 answer = [start + 1, end + 1]  # 1-based index
-
+                # print(answer, start)
             if gem_dict[gems[start]] == 1:
                 del gem_dict[gems[start]]
             else:
