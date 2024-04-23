@@ -22,6 +22,7 @@ def solution(users, emoticons):
         if service >= answer[0]:
             if service == answer[0]:
                 answer[1] = max(answer[1], total)
+                continue
             else:
                 answer[1] = total
             answer[0] = service
