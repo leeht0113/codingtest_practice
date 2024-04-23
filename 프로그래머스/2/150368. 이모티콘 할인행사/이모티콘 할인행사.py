@@ -4,8 +4,6 @@ def solution(users, emoticons):
     answer = [0, 0]
     discount = [0.1, 0.2, 0.3, 0.4]
     d_list = list(product(discount, repeat=len(emoticons)))
-    max_service = 0 # 최대 이모티콘 서비스 가입자 
-    max_sales = 0 # 최대 판매액
     for d in d_list: # 각 이모티콘의 할인율
         service = 0 # 서비스 가입자
         total = 0 # 총 구매비용
