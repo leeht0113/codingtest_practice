@@ -50,4 +50,3 @@ def solution(p):
         temp = '(' + solution(v) + ')'
         temp += reverse(u)
         return temp
-    return answer
