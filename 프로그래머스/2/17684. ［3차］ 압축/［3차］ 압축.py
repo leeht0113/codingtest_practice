@@ -24,7 +24,7 @@ def solution(msg):
                         answer.append(word_dict[temp[:-1]])
                         i += len(temp[:-1])
                         break
-                    # 추가된 단어가 사전에 등록 되어 있다면 answer에 추가
+                    # 추가된 단어가 사전에 등록 되어 있고 마지막 단어이면 answer에 추가
                     else:
                         if i + len(temp) >= len(msg):
                             answer.append(word_dict[temp])
