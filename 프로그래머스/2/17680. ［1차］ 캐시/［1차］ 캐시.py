@@ -15,7 +15,7 @@ def solution(cacheSize, cities):
             # 참조리스트에 없으면, 실행시간 5 추가
             else:
                 answer += 5
-                if len(temp) >= cacheSize:
+                if len(temp) == cacheSize:
                     temp.popleft()
             temp.append(c)
     return answer
