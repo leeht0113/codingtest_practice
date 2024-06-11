@@ -9,19 +9,15 @@ def solution(n, roads, sources, destination):
         graph[b].append(a)
         
     distance = [-1] * (n + 1)
-
+    distance[destination] = 0
     queue = deque()
     queue.append([destination, 0])
-    visited = set()
     while queue:
         v, l = queue.popleft()
-        if v in visited:
-            continue
-        visited.add(v)
-        distance[v] = l
         for i in graph[v]:
-            queue.append([i, l + 1])
-        
+            if distance[i] == -1:
+                queue.append([i, l + 1])
+                distance[i] = l + 1
     for s in sources:
         answer.append(distance[s])
     
