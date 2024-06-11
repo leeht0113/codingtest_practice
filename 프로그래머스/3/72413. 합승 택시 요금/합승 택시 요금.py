@@ -1,23 +1,31 @@
+import heapq
+
 def solution(n, s, a, b, fares):
-    INF = float("inf")
-    graph = [[INF] * (n + 1) for _ in range(n + 1)]
+    answer = 0
+    INF = float('inf')
+    graph = [[] for i in range(n + 1)]
     
-    for i in range(1, n + 1):
-        for j in range(1, n + 1):
-            if i == j:
-                graph[i][j] = 0
-                
     for c, d, f in fares:
-        graph[c][d] = f
-        graph[d][c] = f
+        graph[c].append((d, f))
+        graph[d].append((c, f))
     
-    for k in range(1, n + 1):
-        for i in range(1, n + 1):
-            for j in range(1, n + 1):
-                graph[i][j] = min(graph[i][j], graph[i][k] + graph[k][j])
+    def dijkstra(start):
+        q = [(0, start)]
+        distance = [INF] * (n + 1)
+        distance[start] = 0
+        while q:
+            dist, now = heapq.heappop(q)
+            if distance[now] < dist:
+                continue
+            for i in graph[now]:
+                cost = dist + i[1]
+                if cost < distance[i[0]]:
+                    distance[i[0]] = cost
+                    heapq.heappush(q, (cost, i[0]))
+        return distance
     
+    min_distance = [dijkstra(i) for i in range(n + 1)]
     answer = INF
     for i in range(1, n + 1):
-        answer = min(answer, graph[s][i] + graph[i][a] + graph[i][b])
-        
+        answer = min(answer, min_distance[s][i] + min_distance[i][a] + min_distance[i][b])
     return answer
