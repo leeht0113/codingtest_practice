@@ -12,8 +12,9 @@ def solution(operations):
             if b == -1:
                 heapq.heappop(heap)
             elif b == 1:
-                max_num = max(heap)
-                heap.remove(max_num)
+                # max_num = max(heap)
+                # heap.remove(max_num)
+                heap = heap[:-1]
     if len(heap) == 0:
         return [0, 0]
     else:
