@@ -8,14 +8,12 @@ def solution(operations):
         b = int(b)
         if a == 'I':
             heapq.heappush(heap, b)
-        elif a == 'D':
+        elif a == 'D' and len(heap) > 0:
             if b == -1:
-                if len(heap) > 0:
-                    heapq.heappop(heap)
+                heapq.heappop(heap)
             elif b == 1:
-                if len(heap) > 0:
-                    max_num = max(heap)
-                    heap.remove(max_num)
+                max_num = max(heap)
+                heap.remove(max_num)
     if len(heap) == 0:
         return [0, 0]
     else:
