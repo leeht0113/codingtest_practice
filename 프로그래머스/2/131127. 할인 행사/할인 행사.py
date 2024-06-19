@@ -5,10 +5,13 @@ def solution(want, number, discount):
         want_dict[w] = n
     for i in range(len(discount)):
         temp = want_dict.copy()
-        if i + 10 <= len(discount):
-            for d in discount[i:i+10]:
-                if temp.get(d, 0) > 0:
+        if i + 9 < len(discount):
+            for j in range(i, i + 10):
+                if discount[j] in temp:
+                    d = discount[j]
                     temp[d] -= 1
-            if sum(temp.values()) == 0:
+                    if temp[d] == 0:
+                        del temp[d]
+            if len(temp) == 0:
                 answer += 1
     return answer
