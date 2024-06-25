@@ -25,8 +25,6 @@ def solution(fees, records):
         else:
             info_dict[car_number] += (time - info_in[car_number])
             info_in[car_number] = -1 # 출차 처리가 됐으므로 입차 -1로 처리
-    print(info_dict)
-    print(info_in)
     for i in info_in:
         if info_in[i] != -1: # 입차 차량 다음에 출차 차량이 없음
             info_dict[i] += (last_time - info_in[i])
