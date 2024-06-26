@@ -43,8 +43,6 @@ for comb in combination:
     if len(wall) == 3:
         total_wall.append(wall)
 
-temp_graph = graph.copy()
-
 answer = 0
 for i in range(len(total_wall)):
     temp_graph = deepcopy(graph)
