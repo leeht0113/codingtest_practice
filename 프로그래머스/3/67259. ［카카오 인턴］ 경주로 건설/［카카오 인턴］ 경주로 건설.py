@@ -17,6 +17,7 @@ def solution(board):
     directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
     visited = [[[float('inf')] * 4 for _ in range(N)] for _ in range(N)]
     queue = deque([(0, 0, -1, 0)])  # (x, y, direction, cost)
+    
     for i in range(4):
         visited[0][0][i] = 0
     
