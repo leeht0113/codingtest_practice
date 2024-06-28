@@ -4,23 +4,27 @@ sys.setrecursionlimit(10000)
 
 def dfs(start, maps, visited):
     x, y = start[0], start[1]
+    dx = [-1, 1, 0, 0]
+    dy = [0, 0, -1, 1]
+    rows = len(maps)
+    columns = len(maps[0])
     visited[x][y] = 1
-    move_x = [-1, 1, 0, 0]
-    move_y = [0, 0, -1, 1]
     days = int(maps[x][y])
     for i in range(4):
-        new_x = x + move_x[i]
-        new_y = y + move_y[i]
-        if 0 <= new_x < len(maps) and 0 <= new_y < len(maps[0]):
-            if maps[new_x][new_y] != 'X' and visited[new_x][new_y] == 0:
-                days += dfs((new_x, new_y), maps, visited) 
+        nx = x + dx[i]
+        ny = y + dy[i]
+        if 0 <= nx < rows and 0 <= ny < columns:
+            if maps[nx][ny] != "X" and visited[nx][ny] == 0:
+                days += dfs((nx, ny), maps, visited)
     return days
-
+            
 def solution(maps):
     answer = []
     visited = [[0] * len(maps[0]) for _ in range(len(maps))]
-    for i in range(len(maps)):
-        for j in range(len(maps[0])):
+    rows = len(maps)
+    columns = len(maps[0])
+    for i in range(rows):
+        for j in range(columns):
             if maps[i][j] != "X" and visited[i][j] == 0:
                 answer.append(dfs((i, j), maps, visited))
     if len(answer) == 0:
