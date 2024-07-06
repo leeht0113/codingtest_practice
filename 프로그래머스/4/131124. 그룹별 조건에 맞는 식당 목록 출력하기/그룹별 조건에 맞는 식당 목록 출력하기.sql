@@ -1,5 +1,4 @@
 -- 코드를 입력하세요
-
 WITH review_count AS (
 SELECT MEMBER_ID, COUNT(REVIEW_ID) AS review_cnt
 FROM REST_REVIEW
