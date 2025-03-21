@@ -10,13 +10,24 @@ for _ in range(pairs):
     graph[b].append(a)
 
 visited = [0] * (computers + 1)
-queue = deque()
-queue.append(1)
-visited[1] = 1
-while queue:
-    c = queue.popleft()
+
+# bfs
+# queue = deque()
+# queue.append(1)
+# visited[1] = 1
+# while queue:
+#     c = queue.popleft()
+#     for i in graph[c]:
+#         if visited[i] == 0:
+#             queue.append(i)
+#             visited[i] = 1
+
+# dfs
+def dfs(c):
+    visited[c] = 1
     for i in graph[c]:
         if visited[i] == 0:
-            queue.append(i)
-            visited[i] = 1
+            dfs(i)
+
+dfs(1)
 print(sum(visited[2:]))
