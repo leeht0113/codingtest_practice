@@ -28,7 +28,7 @@ while True:
     # 만약 벽이나 자기자신의 몸과 부딪히면 게임이 끝난다.
     if new_x < 0 or new_x >= n or new_y < 0 or new_y >= n:
         break
-    if board[new_y][new_x] == 2: 
+    elif board[new_y][new_x] == 2: 
         break
     # 만약 이동한 칸에 사과가 있다면, 그 칸에 있던 사과가 없어지고 꼬리는 움직이지 않는다.
     if board[new_y][new_x] == 1:
