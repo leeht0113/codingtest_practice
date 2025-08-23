@@ -6,7 +6,6 @@ def solution(schedules, timelogs, startday):
         allow_time = s + 10
         if allow_time % 100 >= 60:
             allow_time += 40
-        # print(allow_time)
         for t in time:
             if (day % 7 != 6) and (day % 7 != 0):
                 if t <= allow_time:
