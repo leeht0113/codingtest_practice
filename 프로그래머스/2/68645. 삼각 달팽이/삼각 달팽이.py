@@ -1,9 +1,8 @@
 def solution(n):
-    res = [[0] * i for i in range(1, n+1)]
+    res = [[0] * i for i in range(1, n + 1)]
     dy = -1
     dx = 0
-    num = 1
-    
+    cnt = 0
     for i in range(n):
         for _ in range(i, n):
             angle = i % 3
@@ -14,6 +13,6 @@ def solution(n):
             else:
                 dy -= 1
                 dx -= 1
-            res[dy][dx] = num
-            num += 1
-    return [j for i in res for j in i]
+            cnt += 1
+            res[dy][dx] = cnt
+    return [i for j in res for i in j]
