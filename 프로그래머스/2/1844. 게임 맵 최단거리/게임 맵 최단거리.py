@@ -17,5 +17,4 @@ def solution(maps):
                     visited[move_y][move_x] = visited[y][x] + 1
                     queue.append((move_y, move_x))
     result = visited[rows-1][columns-1]
-    print(visited)
     return result if result else -1
