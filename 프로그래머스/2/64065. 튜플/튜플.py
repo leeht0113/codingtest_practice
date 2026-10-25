@@ -1,5 +1,7 @@
+from collections import OrderedDict
+
 def solution(s):
-    answer = {}
+    answer = OrderedDict()
     s = sorted(s[2:-2].split("},{"), key = len)
     for tuples in s:
         elements = tuples.split(',')
