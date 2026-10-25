@@ -1,6 +1,9 @@
 def check(place):
     for row_idx, row in enumerate(place):
         for col_idx, column in enumerate(row):
+            if column != "P":
+                continue
+
             next_row = row_idx + 1
             next_col = col_idx + 1
             prev_col = col_idx - 1
