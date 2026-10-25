@@ -13,10 +13,9 @@ def solution(maps):
             move_y = y + dy[i]
             move_x = x + dx[i]
             if 0 <= move_y < rows and 0 <= move_x < columns:
-                if maps[move_y][move_x] != 0 and visited[move_y][move_x] == 0:
+                if maps[move_y][move_x] == 1 and visited[move_y][move_x] == 0:
                     visited[move_y][move_x] = visited[y][x] + 1
                     queue.append((move_y, move_x))
-    result = visited[rows - 1][columns - 1]
-    if result == 0:
-        return -1
-    return result
+    result = visited[rows-1][columns-1]
+    print(visited)
+    return result if result else -1
