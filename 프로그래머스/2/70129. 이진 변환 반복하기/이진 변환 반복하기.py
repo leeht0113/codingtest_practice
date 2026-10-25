@@ -1,10 +1,8 @@
 def solution(s):
-    count = 0
-    zero_count = 0
-    while s != "1":
-        zero_count += s.count("0")
-        s = s.count("1")
-        s = bin(s)
-        count += 1
-        s = s[2:]
-    return [count, zero_count]
+    change, zero = 0, 0
+    while s != '1':
+        change += 1
+        num = s.count('1')
+        zero += len(s) - num
+        s = bin(num)[2:]
+    return [change, zero]
